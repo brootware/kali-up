@@ -27,5 +27,11 @@
   become: yes
 
 - name: Running IDA Installer
-  command: /opt/RE/idafree70_linux.run
+  command: "{{ re_dir }}idafree70_linux.run"
+  become: yes
+
+- name: Removing Running IDA Installer
+  file : 
+    path: "{{ re_dir }}idafree70_linux.run"
+    state: absent
   become: yes
