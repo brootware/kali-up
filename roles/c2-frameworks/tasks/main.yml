@@ -2,10 +2,11 @@
 # This playbook contains plays to clone all C2 frameworks included in the C2 Matrix
 # URL: https://howto.thec2matrix.com/
 
-- name: Creating C2 directory in {{ c2_dir }}
+- name: Creating C2 directory in "{{ c2_dir }}"
   file:
     path: "{{ c2_dir }}"
     state: directory
+    owner: "{{ user_dir }}"
     mode: '0755'
   become: yes
 
