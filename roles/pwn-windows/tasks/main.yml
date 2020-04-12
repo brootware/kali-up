@@ -19,7 +19,7 @@
     - https://github.com/Hackplayers/evil-winrm
   become: yes
 
-- name: Downloading SysInternals Suite from Microsoft
+- name: Downloading Standalone Packages
   get_url:
     url: "{{ item }}"
     dest: "{{ pwn_win_dir }}"
@@ -27,4 +27,5 @@
     owner: "{{ user_dir }}"
   loop:
     - https://download.sysinternals.com/files/SysinternalsSuite.zip
+    - https://github.com/gentilkiwi/mimikatz/releases/download/2.2.0-20200308/mimikatz_trunk.zip
   become: yes
