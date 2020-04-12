@@ -1,0 +1,30 @@
+---
+- name: Creating Windows Pwn directory in "{{ pwn_win_dir }}"
+  file:
+    path: "{{ pwn_win_dir }}"
+    state: directory
+    owner: "{{ user_dir }}"
+    mode: '0755'
+  become: yes
+
+- name: Cloning Windows Focused tools 
+  git:
+    repo: "{{ item }}"
+    dest: "{{ pwn_win_dir }}{{ item.split('/')[-1].replace('.git','')}}"
+    version: master
+  loop:
+    - https://github.com/BloodHoundAD/BloodHound
+    - https://github.com/byt3bl33d3r/CrackMapExec
+    - https://github.com/trustedsec/unicorn
+    - https://github.com/Hackplayers/evil-winrm
+  become: yes
+
+- name: Downloading SysInternals Suite from Microsoft
+  get_url:
+    url: "{{ item }}"
+    dest: "{{ pwn_win_dir }}"
+    mode: 644
+    owner: "{{ user_dir }}"
+  loop:
+    - https://download.sysinternals.com/files/SysinternalsSuite.zip
+  become: yes
