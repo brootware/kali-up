@@ -42,3 +42,8 @@ The ```win-pwn``` role automates the downloading of the following:
 * [Evil-WinRm](https://github.com/Hackplayers/evil-winrm)
 * [CrackMapExec](https://github.com/byt3bl33d3r/CrackMapExec)
 * [Unicorn](https://github.com/trustedsec/unicorn)
+
+#### Lin-PWN Tools
+The ```lin-pwn``` role automates the downloading of the following:
+
+* [LinEnum](https://github.com/rebootuser/LinEnum)
