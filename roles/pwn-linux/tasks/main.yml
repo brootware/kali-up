@@ -1,0 +1,17 @@
+---
+- name: Creating Linux Pwn directory in "{{ pwn_lin_dir }}"
+  file:
+    path: "{{ pwn_lin_dir }}"
+    state: directory
+    owner: "{{ user_dir }}"
+    mode: '0755'
+  become: yes
+
+- name: Cloning Linux Focused tools 
+  git:
+    repo: "{{ item }}"
+    dest: "{{ pwn_lin_dir }}{{ item.split('/')[-1].replace('.git','')}}"
+    version: master
+  loop:
+    - https://github.com/rebootuser/LinEnum
+  become: yes
