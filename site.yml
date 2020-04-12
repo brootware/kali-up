@@ -3,3 +3,4 @@
   roles:
     - c2-frameworks
     - re-frameworks
+    - pwn-windows
