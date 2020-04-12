@@ -1,3 +1,4 @@
 c2_dir: /opt/c2/
 re_dir: /opt/RE/
+pwn_win_dir: /opt/win_pwn/
 user_dir: root
