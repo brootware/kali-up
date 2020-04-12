@@ -1,8 +1,5 @@
-## Kali-Up
-
-
 <p align="center">
-<img width="264" height="61" src="https://imgur.com/a/Igw1xda">
+<img src="https://i.imgur.com/pWf4nRB.png" />
 <br />
 <i>So many tools, so little time</i>
 </p>
