@@ -1,0 +1,31 @@
+---
+# This playbook contains plays to grab RE frameworks/packages
+
+- name: Creating RE directory in {{ re_dir }}
+  file:
+    path: "{{ re_dir }}"
+    state: directory
+    owner: "{{ user_dir }}"
+    mode: '0755'
+  become: yes
+
+- name: Downloading RE Frameworks (IDA & Ghidra)
+  get_url:
+    url: "{{ item }}"
+    dest: "{{ re_dir }}"
+    mode: 755
+    owner: "{{ user_dir }}"
+  loop:
+    - https://out7.hex-rays.com/files/idafree70_linux.run
+    - https://ghidra-sre.org/ghidra_9.1.2_PUBLIC_20200212.zip
+  become: yes
+
+- name: Installing JDK 11+ for Ghidra
+  package:
+    name: openjdk-11-jdk-headless
+    state: latest
+  become: yes
+
+- name: Running IDA Installer
+  command: /opt/RE/idafree70_linux.run
+  become: yes
