@@ -36,6 +36,8 @@ Note, you will be prompted to specify IDA install directory.
 
 
 #### Win-PWN Tools
+The ```win-pwn``` role automates the downloading of the following:
+
 * [Bloodhound](https://github.com/BloodHoundAD/BloodHound)
 * [Evil-WinRm](https://github.com/Hackplayers/evil-winrm)
 * [CrackMapExec](https://github.com/byt3bl33d3r/CrackMapExec)
