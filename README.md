@@ -30,3 +30,5 @@ roles for specific configuration. Frameworks within C2-matrix include the follow
 
 #### RE-Frameworks
 The ```RE-Frameworks``` role automates the downloading and installing of Ghidra and IDA Pro Free.
+* [Ghidra](https://ghidra-sre.org/)
+* [IDA Pro Free](https://www.hex-rays.com/products/ida/support/download_freeware/)
