@@ -1,0 +1,31 @@
+---
+# This playbook contains plays to clone all C2 frameworks included in the C2 Matrix
+# URL: https://howto.thec2matrix.com/
+
+- name: Creating C2 directory in {{ c2_dir }}
+  file:
+    path: "{{ c2_dir }}"
+    state: directory
+    mode: '0755'
+  become: yes
+
+- name: Cloning C2 Frameworks
+  git:
+    repo: "{{ item }}"
+    dest: "{{ c2_dir }}{{ item.split('/')[-1].replace('.git','')}}"
+    version: master
+  loop:
+    - https://github.com/its-a-feature/Apfell
+    - https://github.com/mitre/caldera
+    - https://github.com/cobbr/Covenant
+    - https://github.com/BC-SECURITY/Empire.git
+    - https://github.com/FactionC2/Faction
+    - https://github.com/ElevenPaths/ibombshell.git
+    - https://github.com/zerosum0x0/koadic
+    - https://github.com/Ne0nd0g/merlin
+    - https://github.com/p3nt4/Nuages.git
+    - https://github.com/AdrianVollmer/PowerHub.git
+    - https://github.com/byt3bl33d3r/SILENTTRINITY
+    - https://github.com/BishopFox/sliver
+    - https://github.com/trustedsec/trevorc2.git
+  become: yes
