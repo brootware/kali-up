@@ -1,1 +1,3 @@
 c2_dir: /opt/c2/
+re_dir: /opt/RE/
+user_dir: root
