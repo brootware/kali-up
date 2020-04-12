@@ -1,9 +1,14 @@
-## Kali-Init
+## Kali-Up
 
+
+<p align="center">
+<img width="264" height="61" src="https://imgur.com/a/Igw1xda">
+<br />
+<i>So many tools, so little time</i>
+</p>
 
 ### About The Project
-Kali-Init contains Ansible Roles to install additional frameworks and packages for a Kali Linux installation.
-
+Kali-Up contains Ansible Roles to install additional frameworks and packages for a Kali Linux installation.
 
 ## Ansible Roles
 #### C2-Frameworks
