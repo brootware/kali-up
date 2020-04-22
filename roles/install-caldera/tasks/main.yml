@@ -1,0 +1,6 @@
+---
+# URL: github.com/mitre/caldera
+
+- name: Running CALDERA install script...
+  script: "{{ c2_dir }}caldera/install.sh"
+  become: yes
