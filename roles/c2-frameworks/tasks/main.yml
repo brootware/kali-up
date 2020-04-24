@@ -29,4 +29,5 @@
     - https://github.com/byt3bl33d3r/SILENTTRINITY
     - https://github.com/BishopFox/sliver
     - https://github.com/trustedsec/trevorc2.git
+    - https://github.com/nettitude/PoshC2
   become: yes
