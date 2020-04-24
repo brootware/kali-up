@@ -1,0 +1,9 @@
+---
+
+- name: Running Empire install script...
+  script: "{{ c2_dir }}Empire/setup/install.sh"
+  become: yes
+
+- name: Running Empire DB Setup with uuid4 as a password
+  shell: python3 -c "import uuid; print(uuid.uuid4())" | python3 "{{ c2_dir }}Empire/setup/setup_database.py"
+  become: yes
