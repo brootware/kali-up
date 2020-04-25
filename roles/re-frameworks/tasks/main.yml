@@ -35,3 +35,28 @@
     path: "{{ re_dir }}idafree70_linux.run"
     state: absent
   become: yes
+
+- name: 
+  debug:
+    msg: "By default, pip uses the pip version for the Ansible Python interpreter. For example, pip3 on python 3, and pip2 or pip on python 2."
+
+- name: Installing Python bindings for capstone/unicorn/keystone/ropper
+  pip:
+    name: "{{ item }}"
+  loop:
+    - capstone 
+    - unicorn
+    - keystone-engine
+    - ropper
+  become: yes
+
+- name: Downloading GEF (GDB Enhanced Features) from GitHub
+  get_url: 
+    url: https://github.com/hugsy/gef/raw/master/scripts/gef.sh 
+    dest: /tmp/gef.sh
+  become: no
+
+- name: Installing GEF from /tmp/gef.sh.
+  script: 
+    cmd: /tmp/gef.sh
+  become: no
