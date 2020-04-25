@@ -27,17 +27,16 @@ roles for specific configuration. Frameworks within C2-matrix include the follow
 * [Silver](https://github.com/BishopFox/sliver)
 * [TrevorC2](https://github.com/trustedsec/trevorc2.git)
 
-
 #### RE-Frameworks
 The ```RE-Frameworks``` role automates the downloading and installing of Ghidra and IDA Pro Free.
 Note, you will be prompted to specify IDA install directory.
 * [Ghidra](https://ghidra-sre.org/)
 * [IDA Pro Free](https://www.hex-rays.com/products/ida/support/download_freeware/)
+* [GDB Enhanced Framework] (https://github.com/hugsy/gef)
 
 
 #### Win-PWN Tools
 The ```win-pwn``` role automates the downloading of the following:
-
 * [Bloodhound](https://github.com/BloodHoundAD/BloodHound)
 * [Evil-WinRm](https://github.com/Hackplayers/evil-winrm)
 * [CrackMapExec](https://github.com/byt3bl33d3r/CrackMapExec)
@@ -45,5 +44,4 @@ The ```win-pwn``` role automates the downloading of the following:
 
 #### Lin-PWN Tools
 The ```lin-pwn``` role automates the downloading of the following:
-
 * [LinEnum](https://github.com/rebootuser/LinEnum)
