@@ -32,7 +32,7 @@ The ```RE-Frameworks``` role automates the downloading and installing of Ghidra 
 Note, you will be prompted to specify IDA install directory.
 * [Ghidra](https://ghidra-sre.org/)
 * [IDA Pro Free](https://www.hex-rays.com/products/ida/support/download_freeware/)
-* [GDB Enhanced Framework] (https://github.com/hugsy/gef)
+* [GDB Enhanced Framework](https://github.com/hugsy/gef)
 
 
 #### Win-PWN Tools
