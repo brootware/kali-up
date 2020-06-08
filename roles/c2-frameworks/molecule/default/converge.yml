@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include c2-frameworks"
+      include_role:
+        name: "c2-frameworks"

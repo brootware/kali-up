@@ -1,0 +1,17 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+platforms:
+  - name: instance
+    image: docker.io/jaredestroud/kaliup
+    pre_build_image: true
+provisioner:
+  name: ansible
+  inventory:
+    links:
+      group_vars: ../../../../group_vars
+verifier:
+  name: ansible
+
