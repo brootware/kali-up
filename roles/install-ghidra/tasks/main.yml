@@ -1,0 +1,5 @@
+---
+
+- name: Unzipping Ghidra
+  raw: "cd {{ re_dir }} && unzip {{ re_dir }}ghidra*"
+  become: yes
