@@ -7,6 +7,10 @@
 ### About The Project
 Kali-Up contains Ansible Roles to install additional frameworks and packages for a Kali Linux installation.
 
+## Requirements
+* Ansible
+* pip3
+
 ## Ansible Roles
 #### C2-Frameworks
 The ```C2-Frameworks``` role contains the c2 frameworks outlined in the [c2-matrix](https://howto.thec2matrix.com).
