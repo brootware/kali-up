@@ -14,4 +14,5 @@
     version: master
   loop:
     - https://github.com/rebootuser/LinEnum
+    - https://github.com/OJ/gobuster
   become: yes
