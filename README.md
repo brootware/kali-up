@@ -11,6 +11,10 @@ Kali-Up contains Ansible Roles to install additional frameworks and packages for
 * Ansible
 * pip3
 
+## Ansible Vars
+The group vars specify the destination of RE, win-pwn, lin-pwn and C2 frameworks.
+After downloading and installing, these directories (in /opt/ by default) are chown'd with the user running the script.
+
 ## Ansible Roles
 #### C2-Frameworks
 The ```C2-Frameworks``` role contains the c2 frameworks outlined in the [c2-matrix](https://howto.thec2matrix.com).
