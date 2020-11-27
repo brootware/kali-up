@@ -1,0 +1,17 @@
+---
+
+
+- name: Chown RE Dir to logged in user
+  file: 
+    path: "{{ item }}"
+    owner: "{{ lookup('env','USER') }}"
+    group: "{{ lookup('env','USER') }}"
+    mode: '744'
+    recurse: yes
+
+  loop:
+    - "{{ re_dir }}"
+    - "{{ c2_dir }}"
+    - "{{ pwn_win_dir }}"
+    - "{{ pwn_lin_dir }}"
+  become: yes
