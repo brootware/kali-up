@@ -28,7 +28,7 @@
   become: yes
 
 - name: Running IDA Installer
-  command: "{{ re_dir }}idafree70_linux.run"
+  command: "{{ re_dir }}idafree70_linux.run --mode unattended --prefix /opt/idafree --installpassword \"\" "
   become: yes
 
 - name: Removing Running IDA Installer
