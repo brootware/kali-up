@@ -11,6 +11,15 @@ Kali-Up contains Ansible Roles to install additional frameworks and packages for
 * Ansible
 * pip3
 
+
+## How to Use?
+1. Modify site.yml to have the Ansible roles you want to install on your machine.
+2. Execute the following:
+```
+ansible-playbook site.yml
+```
+*If there's errors, please open an issue!*
+
 ## Ansible Vars
 The group vars specify the destination of RE, win-pwn, lin-pwn and C2 frameworks.
 After downloading and installing, these directories (in /opt/ by default) are chown'd with the user running the script.
