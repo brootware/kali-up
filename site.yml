@@ -5,3 +5,5 @@
     - re-frameworks
     - pwn-windows
     - pwn-linux
+    - install-ghidra
+    - chown-dirs
