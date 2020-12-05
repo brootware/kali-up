@@ -17,9 +17,21 @@
     - https://github.com/byt3bl33d3r/CrackMapExec
     - https://github.com/trustedsec/unicorn
     - https://github.com/Hackplayers/evil-winrm
+    - https://github.com/PowerShellMafia/PowerSploit.git  
+    - https://github.com/GhostPack/KeeThief
+    - https://github.com/GhostPack/Seatbelt
+    - https://github.com/GhostPack/SharpUp
+    - https://github.com/GhostPack/SafetyKatz
+    - https://github.com/GhostPack/SharpDump
+    - https://github.com/GhostPack/SharpWMI  
+    - https://github.com/GhostPack/Rubeus
+    - https://github.com/GhostPack/SharpDPAPI
+    - https://github.com/GhostPack/Lockless
+    - https://github.com/GhostPack/SharpRoast
+
   become: yes
 
-- name: Downloading Standalone Packages
+- name: Downloading precompiled Packages
   get_url:
     url: "{{ item }}"
     dest: "{{ pwn_win_dir }}"
