@@ -79,3 +79,5 @@ The ```win-pwn``` role automates the downloading of the following:
 #### Lin-PWN Tools
 The ```lin-pwn``` role automates the downloading of the following:
 * [LinEnum](https://github.com/rebootuser/LinEnum)
+* [GoBuster](https://github.com/OJ/gobuster)
+* [MimiPenguin](https://github.com/huntergregal/mimipenguin)
