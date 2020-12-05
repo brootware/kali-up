@@ -54,6 +54,7 @@ Note, you will be prompted to specify IDA install directory.
 * [Unicorn Framework via pip](https://github.com/unicorn-engine/unicorn)
 * [Keystone-Engine via pip](https://github.com/keystone-engine/keystone)
 * [Ropper via pip](https://github.com/sashs/Ropper)
+* [Pwntools via pip](https://github.com/Gallopsled/pwntools)
 
 
 #### Win-PWN Tools
