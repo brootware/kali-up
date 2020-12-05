@@ -41,7 +41,21 @@
   debug:
     msg: "By default, pip uses the pip version for the Ansible Python interpreter. For example, pip3 on python 3, and pip2 or pip on python 2."
 
-- name: Installing Python bindings for capstone/unicorn/keystone/ropper
+- name: PwnTools dependencies
+  package:
+    name: "{{ item }}"
+    state: latest
+  loop:
+    - python3 
+    - python3-pip 
+    - python3-dev
+    - git 
+    - libssl-dev 
+    - libffi-dev
+    - build-essential
+  become: yes
+
+- name: Installing Python bindings for capstone/unicorn/keystone/ropper/pwntools
   pip:
     name: "{{ item }}"
   loop:
@@ -49,6 +63,7 @@
     - unicorn
     - keystone-engine
     - ropper
+    - pwntools
   become: yes
 
 - name: Downloading GEF (GDB Enhanced Features) from GitHub
