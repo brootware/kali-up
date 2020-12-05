@@ -30,7 +30,7 @@ The ```C2-Frameworks``` role contains the c2 frameworks outlined in the [c2-matr
 Note, this role just clones the repos but does not do any additional configuration for deployment. Seek stand-alone
 roles for specific configuration. Frameworks within C2-matrix include the following
 
-* [Apfell](https://www.github.com/its-a-feature/Apfell)
+* [Mythic](https://www.github.com/its-a-feature/Mythic)
 * [Caldera](https://www.github.com/mitre/caldera)
 * [Covenant](https://www.github.com/cobbr/Covenant)
 * [Empire](https://www.github.com/BC-SECURITY/Empire.git)
