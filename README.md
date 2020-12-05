@@ -50,6 +50,10 @@ Note, you will be prompted to specify IDA install directory.
 * [Ghidra](https://ghidra-sre.org/)
 * [IDA Pro Free](https://www.hex-rays.com/products/ida/support/download_freeware/)
 * [GDB Enhanced Framework](https://github.com/hugsy/gef)
+* [Capstone Framework via pip](https://github.com/aquynh/capstone)
+* [Unicorn Framework via pip](https://github.com/unicorn-engine/unicorn)
+* [Keystone-Engine via pip](https://github.com/keystone-engine/keystone)
+* [Ropper via pip](https://github.com/sashs/Ropper)
 
 
 #### Win-PWN Tools
