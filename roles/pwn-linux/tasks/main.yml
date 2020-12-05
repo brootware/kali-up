@@ -17,3 +17,13 @@
     - https://github.com/OJ/gobuster
     - https://github.com/huntergregal/mimipenguin
   become: yes
+
+- name: Downloading precompiled Packages
+  get_url:
+    url: "{{ item }}"
+    dest: "{{ pwn_lin_dir }}"
+    mode: 644
+    owner: "{{ user_dir }}"
+  loop:
+    - https://github.com/kgretzky/pwndrop/releases/download/1.0.1/pwndrop-linux-amd64.tar.gz
+  become: yes
