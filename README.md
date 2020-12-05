@@ -58,6 +58,18 @@ The ```win-pwn``` role automates the downloading of the following:
 * [Evil-WinRm](https://github.com/Hackplayers/evil-winrm)
 * [CrackMapExec](https://github.com/byt3bl33d3r/CrackMapExec)
 * [Unicorn](https://github.com/trustedsec/unicorn)
+* [PowerSploit](https://github.com/PowerShellMafia/PowerSploit)
+* [KeeTheif](https://github.com/GhostPack/KeeThief)
+* [Seatbelt](https://github.com/GhostPack/Seatbelt)
+* [SharpUp](https://github.com/GhostPack/SharpUp)
+* [SafetyKatz](https://github.com/GhostPack/SafetyKatz)
+* [SharpDump](https://github.com/GhostPack/SharpDump)
+* [SharpWMI](https://github.com/GhostPack/SharpWMI)
+* [Rubeus](https://github.com/GhostPack/Rubeus)
+* [SharpDAPI](https://github.com/GhostPack/SharpDPAPI)
+* [Lockless](https://github.com/GhostPack/Lockless)
+* [SharpRoast](https://github.com/GhostPack/SharpRoast)
+
 
 #### Lin-PWN Tools
 The ```lin-pwn``` role automates the downloading of the following:
