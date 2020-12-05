@@ -15,4 +15,5 @@
   loop:
     - https://github.com/rebootuser/LinEnum
     - https://github.com/OJ/gobuster
+    - https://github.com/huntergregal/mimipenguin
   become: yes
