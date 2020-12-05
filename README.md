@@ -5,12 +5,11 @@
 </p>
 
 ### About The Project
-Kali-Up contains Ansible Roles to install additional frameworks and packages for a Kali Linux installation.
+Kali-Up contains Ansible Roles to download and install additional frameworks, packages and stand-alone offensive utilities for a Kali Linux installation.
 
 ## Requirements
 * Ansible
 * pip3
-
 
 ## How to Use?
 1. Modify site.yml to have the Ansible roles you want to install on your machine.
