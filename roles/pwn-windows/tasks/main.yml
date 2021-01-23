@@ -28,6 +28,7 @@
     - https://github.com/GhostPack/SharpDPAPI
     - https://github.com/GhostPack/Lockless
     - https://github.com/GhostPack/SharpRoast
+    - https://github.com/cobbr/PSAmsi.git
 
   become: yes
 
