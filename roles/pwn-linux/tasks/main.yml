@@ -7,18 +7,45 @@
     mode: '0755'
   become: yes
 
-- name: Cloning Linux Focused tools 
+- name: Cloning Linux Focused tools  - Enumeration
   git:
     repo: "{{ item }}"
-    dest: "{{ pwn_lin_dir }}{{ item.split('/')[-1].replace('.git','')}}"
+    dest: "{{ pwn_lin_dir }}/enumeration/{{ item.split('/')[-1].replace('.git','')}}"
     version: master
   loop:
+    - https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite
     - https://github.com/rebootuser/LinEnum
-    - https://github.com/OJ/gobuster
-    - https://github.com/huntergregal/mimipenguin
+    - https://github.com/diego-treitos/linux-smart-enumeration
+  become: yes
+
+- name: Cloning Linux Focused tools  - Payload Crafting
+  git:
+    repo: "{{ item }}"
+    dest: "{{ pwn_lin_dir }}/payload_crafting/{{ item.split('/')[-1].replace('.git','')}}"
+    version: master
+  loop:
     - https://github.com/gaffe23/linux-inject
     - https://github.com/gianlucaborello/libprocesshider
+  become: yes
+
+- name: Cloning Linux Focused tools  - Web
+  git:
+    repo: "{{ item }}"
+    dest: "{{ pwn_lin_dir }}/web/{{ item.split('/')[-1].replace('.git','')}}"
+    version: master
+  loop:
+    - https://github.com/OJ/gobuster
     - https://github.com/tls-attacker/TLS-Attacker
+  become: yes
+
+- name: Cloning Linux Focused tools  - Cred Dumping
+  git:
+    repo: "{{ item }}"
+    dest: "{{ pwn_lin_dir }}/cred_dumping/{{ item.split('/')[-1].replace('.git','')}}"
+    version: master
+  loop:
+    - https://github.com/huntergregal/mimipenguin
+    - https://github.com/AlessandroZ/LaZagne
   become: yes
 
 - name: Cloning Linux Focused tools  - rootkits
