@@ -6,6 +6,7 @@
 
 ### About The Project
 Kali-Up contains Ansible Roles to download and install additional frameworks, packages and stand-alone offensive utilities for a Kali Linux installation.
+Downloading and installing are separate roles and not all tool have "installing" playbooks. 
 
 ## Requirements
 * Ansible
