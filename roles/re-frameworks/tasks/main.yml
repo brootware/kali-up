@@ -17,8 +17,8 @@
     owner: "{{ user_dir }}"
   loop:
     - https://out7.hex-rays.com/files/idafree70_linux.run
-    - https://ghidra-sre.org/ghidra_9.2_PUBLIC_20201113.zip
-    - https://github.com/radareorg/cutter/releases/download/v1.12.0/Cutter-v1.12.0-x64.Linux.AppImage
+    - https://ghidra-sre.org/ghidra_9.2.3_PUBLIC_20210325.zip
+    - https://github.com/rizinorg/cutter/releases/download/v2.0.2/Cutter-v2.0.2-x64.Linux.AppImage
   become: yes
 
 - name: Installing JDK 11+ for Ghidra
