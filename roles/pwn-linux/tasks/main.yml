@@ -16,6 +16,7 @@
     - https://github.com/rebootuser/LinEnum
     - https://github.com/OJ/gobuster
     - https://github.com/huntergregal/mimipenguin
+    - https://github.com/gaffe23/linux-inject
   become: yes
 
 - name: Downloading precompiled Packages
