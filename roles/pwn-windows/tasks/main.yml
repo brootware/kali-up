@@ -29,7 +29,7 @@
     - https://github.com/GhostPack/Lockless
     - https://github.com/GhostPack/SharpRoast
     - https://github.com/cobbr/PSAmsi.git
-
+    - https://github.com/Tylous/Limelighter
   become: yes
 
 - name: Downloading precompiled Packages
