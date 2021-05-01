@@ -17,6 +17,24 @@
     - https://github.com/OJ/gobuster
     - https://github.com/huntergregal/mimipenguin
     - https://github.com/gaffe23/linux-inject
+    - https://github.com/gianlucaborello/libprocesshider
+  become: yes
+
+- name: Cloning Linux Focused tools  - rootkits
+  git:
+    repo: "{{ item }}"
+    dest: "{{ pwn_lin_dir }}/rootkits/{{ item.split('/')[-1].replace('.git','')}}"
+    version: master
+  loop:
+    - https://github.com/f0rb1dd3n/Reptile
+    - https://github.com/mempodippy/vlany
+    - https://github.com/chokepoint/azazel
+    - https://github.com/chokepoint/Jynx2
+    - https://github.com/chokepoint/jynxkit
+    - https://github.com/ChristianPapathanasiou/apache-rootkit
+    - https://github.com/mncoppola/suterusu
+    - https://github.com/jermeyyy/rooty
+    - https://github.com/m0nad/Diamorphine
   become: yes
 
 - name: Downloading precompiled Packages
