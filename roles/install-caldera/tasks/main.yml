@@ -2,5 +2,5 @@
 # URL: github.com/mitre/caldera
 
 - name: Running CALDERA install script...
-  script: "{{ c2_dir }}caldera/install.sh"
+  shell: pip3 install -r "{{ c2_dir }}caldera/requirements.txt"
   become: yes
