@@ -11,6 +11,8 @@ Downloading and installing are separate roles and not all tool have "installing"
 ## Requirements
 * Ansible
 * pip3
+* [virtualbox](https://www.virtualbox.org/wiki/Downloads)
+* [vagrant](https://www.vagrantup.com/docs/installation)
 
 ## How to Use?
 1. Modify site.yml to have the Ansible roles you want to install on your machine.
