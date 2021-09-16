@@ -49,5 +49,5 @@
     owner: "{{ user_dir }}"
   loop:
     - https://download.sysinternals.com/files/SysinternalsSuite.zip
-    - https://github.com/gentilkiwi/mimikatz/releases/download/2.2.0-20200918-fix/mimikatz_trunk.zip
+    - https://github.com/gentilkiwi/mimikatz/releases/download/2.2.0-20210810-2/mimikatz_trunk.zip
   become: yes
