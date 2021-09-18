@@ -9,16 +9,19 @@ Kali-Up contains Ansible Roles to download and install additional frameworks, pa
 Downloading and installing are separate roles and not all tool have "installing" playbooks. 
 
 ## Requirements
-* Ansible
-* pip3
 * [virtualbox](https://www.virtualbox.org/wiki/Downloads)
 * [vagrant](https://www.vagrantup.com/docs/installation)
 
 ## How to Use?
-1. Modify site.yml to have the Ansible roles you want to install on your machine.
-2. Execute the following:
+1. Clone this repo.
 ```
-ansible-playbook site.yml
+git clone https://github.com/archcloudlabs/kali-up.git && cd kali-up
+```
+2. Modify site.yml to have the Ansible roles you want to install on your machine.
+3. Execute the following:
+```
+vagrant up
+ansible-playbook -i hosts site.yml
 ```
 *If there's errors, please open an issue!*
 

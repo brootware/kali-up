@@ -1,5 +1,7 @@
 ---
-- hosts: localhost
+- hosts: all
+  become: yes
+
   roles:
     - c2-frameworks
     - re-frameworks
@@ -7,3 +9,9 @@
     - pwn-linux
     - install-ghidra
     - chown-dirs
+
+  tasks:
+    - name: install ansible via pip
+      pip:
+        name: ansible
+        state: present

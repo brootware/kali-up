@@ -13,8 +13,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.ssh.insert_key = false
 
   config.vm.provider VIRTUALBOX do |v|
-    v.memory = 4096
-    v.cpus = 4
+    v.memory = 2048
+    v.cpus = 2
+
+  config.vm.provider :virtualbox do |vb|
+    vb.customize ["modifyvm", :id, "--vram", "256"]
+  end
 
 #   config.vm.provider VMWARE do |v|
 #     v.vmx["memsize"] = "4096"
