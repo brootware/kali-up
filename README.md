@@ -21,7 +21,7 @@ git clone https://github.com/archcloudlabs/kali-up.git && cd kali-up
 3. Execute the following:
 ```
 vagrant up
-ansible-playbook -i hosts site.yml
+ansible-playbook -i hosts.ini site.yml
 ```
 *If there's errors, please open an issue!*
 

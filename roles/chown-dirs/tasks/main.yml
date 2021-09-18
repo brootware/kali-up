@@ -1,12 +1,10 @@
 ---
-
-
 - name: Chown RE Dir to logged in user
-  file: 
+  file:
     path: "{{ item }}"
-    owner: "{{ lookup('env','USER') }}"
-    group: "{{ lookup('env','USER') }}"
-    mode: '744'
+    owner: "vagrant"
+    group: "vagrant"
+    mode: "744"
     recurse: yes
 
   loop:
