@@ -10,6 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box_version = "2021.2.0"
   config.vm.network :private_network, type: "dhcp"
   config.vm.hostname = "attacker"
+  config.vm.name = "attacker"
   config.ssh.insert_key = false
 
   config.vm.provider VIRTUALBOX do |v|
