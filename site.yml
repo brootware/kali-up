@@ -3,15 +3,16 @@
   become: yes
 
   roles:
-    - c2-frameworks
-    - re-frameworks
-    - pwn-windows
-    - pwn-linux
-    - install-ghidra
-    - chown-dirs
+    # - c2-frameworks
+    # - re-frameworks
+    # - pwn-windows
+    # - pwn-linux
+    # - install-ghidra
+    # - chown-dirs
 
   tasks:
-    - name: install ansible via pip
-      pip:
-        name: ansible
-        state: present
+    - name: Update all packages to latest version
+      apt:
+        name: '*'
+        state: latest
+
