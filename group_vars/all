@@ -3,3 +3,4 @@ re_dir: /opt/RE/
 pwn_win_dir: /opt/win_pwn/
 pwn_lin_dir: /opt/lin_pwn/
 user_dir: root
+blue_dir: /opt/forensics/
