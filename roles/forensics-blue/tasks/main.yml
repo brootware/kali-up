@@ -1,4 +1,14 @@
 --- 
+- name: Include vars of blue_vars.yml file.
+  include_vars:
+    file: blue_vars.yml
+
+- name: Update all packages to latest version
+  become: yes
+  apt:
+    update_cache: yes
+    cache_valid_time: 86400
+
 - name: Install foremost, exiftool, steghide
   raw: "apt install {{ item }} -y"
   become: yes
@@ -6,3 +16,23 @@
     - foremost
     - exiftool
     - steghide
+
+- name: Install olevba via pip for analyzing macros
+  pip:
+    name: "{{ item }}"
+  loop:
+    - oletools
+    - olefile
+  become: yes
+
+- name: Download oledump.
+  get_url:
+    url: "http://didierstevens.com/files/software/oledump_V{{ oledump_version }}.zip"
+    dest: "{{ blue_dir }}"
+    checksum: "{{ oledump_checksum }}"
+
+- name: Expand oledump
+  unarchive:
+    src: "{{ blue_dir }}/oledump_V{{ oledump_version }}.zip"
+    dest: "{{ blue_dir }}"
+    remote_src: yes

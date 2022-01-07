@@ -12,4 +12,5 @@
     - "{{ c2_dir }}"
     - "{{ pwn_win_dir }}"
     - "{{ pwn_lin_dir }}"
+    - "{{ blue_dir }}"
   become: yes

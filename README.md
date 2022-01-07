@@ -121,3 +121,4 @@ The `lin-pwn` role automates the downloading of the following:
 - [foremost](https://salsa.debian.org/rul/foremost/tree/debian/sid)
 - [exiftool](https://github.com/exiftool/exiftool)
 - [steghide](https://salsa.debian.org/pkg-security-team/steghide)
+- [oletools](http://decalage.info/python/oletools)
