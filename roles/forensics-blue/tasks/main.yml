@@ -1,8 +1,0 @@
---- 
-- name: Install foremost, exiftool, steghide
-  raw: "apt install {{ item }} -y"
-  become: yes
-  loop:
-    - foremost
-    - exiftool
-    - steghide
