@@ -115,9 +115,3 @@ The `lin-pwn` role automates the downloading of the following:
 - [Suterusu](https://github.com/mncoppola/suterusu)
 - [Rooty](https://github.com/jermeyyy/rooty)
 - [Diamorphine](https://github.com/m0nad/Diamorphine)
-
-#### Forensic Blue Team Tools
-
-- [foremost](https://salsa.debian.org/rul/foremost/tree/debian/sid)
-- [exiftool](https://github.com/exiftool/exiftool)
-- [steghide](https://salsa.debian.org/pkg-security-team/steghide)
