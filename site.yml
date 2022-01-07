@@ -2,12 +2,6 @@
 - hosts: all
   become: yes
 
-  tasks:
-    - name: Update all packages to latest version
-      package:
-        update_cache: yes
-        cache_valid_time: 86400
-
   roles:
     - c2-frameworks
     - re-frameworks
@@ -15,7 +9,6 @@
     - pwn-linux
     - install-ghidra
     - chown-dirs
-    - forensics-blue
 
 
 
