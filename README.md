@@ -20,22 +20,40 @@ Downloading and installing are separate roles and not all tool have "installing"
 
 1. Clone this repo.
 
-```
-git clone https://github.com/archcloudlabs/kali-up.git && cd kali-up
-```
+   ```
+   git clone https://github.com/archcloudlabs/kali-up.git && cd kali-up
+   ```
 
-2. Modify site.yml to have the Ansible roles you want to install on your machine.
+2. Modify [site.yml](./site.yml) to have the Ansible roles you want to install on your machine by commenting. Else all the roles will be installed.
+
+   ```yaml
+   roles:
+     - c2-frameworks
+     - re-frameworks
+     - pwn-windows
+     - pwn-linux
+     - install-ghidra
+     - chown-dirs
+     - forensics-blue
+   ```
+
 3. Execute the following if you are installing it without any virtualization.
 
-   `ansible-playbook site.yml`
+   ```
+   ansible-playbook site.yml
+   ```
 
 4. For having a disposable kali machine up and running via Oracle Virtual box, execute the following:
 
-   `vagrant up `
+   ```
+   vagrant up
+   ```
 
    The above should automatcally download latest kali image and install all the roles you specified.
 
-   `vagrant provision`
+   ```
+   vagrant provision
+   ```
 
    Run this again if you ran into any issues.
 
