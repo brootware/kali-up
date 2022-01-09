@@ -20,9 +20,9 @@ Downloading and installing are separate roles and not all tool have "installing"
 
 1. Clone this repo.
 
-```
-git clone https://github.com/archcloudlabs/kali-up.git && cd kali-up
-```
+   ```
+   git clone https://github.com/archcloudlabs/kali-up.git && cd kali-up
+   ```
 
 2. Modify site.yml to have the Ansible roles you want to install on your machine.
 3. Execute the following if you are installing it without any virtualization.
