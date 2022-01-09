@@ -13,6 +13,8 @@ Downloading and installing are separate roles and not all tool have "installing"
 
 - [virtualbox](https://www.virtualbox.org/wiki/Downloads)
 - [vagrant](https://www.vagrantup.com/docs/installation)
+- Ansible
+- Pip3
 
 ## How to Use?
 
