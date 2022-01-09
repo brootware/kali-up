@@ -1,15 +1,35 @@
 ---
-- name: Chown RE Dir to logged in user
+- name: Chown RE Dir to logged in user. (Might fail if you're executing via Vagrant. You can ignore the errors here.)
   file:
     path: "{{ item }}"
-    owner: "vagrant"
-    group: "vagrant"
+    owner: "{{ lookup('env','USER') }}"
+    group: "{{ lookup('env','USER') }}"
     mode: "744"
     recurse: yes
+  register: result
+  ignore_errors: true
 
   loop:
     - "{{ re_dir }}"
     - "{{ c2_dir }}"
     - "{{ pwn_win_dir }}"
     - "{{ pwn_lin_dir }}"
+    - "{{ blue_dir }}"
+  become: yes
+
+- name: Chown RE Dir as remote vagrant user
+  file:
+    path: "{{ item }}"
+    owner: "{{ ansible_ssh_user }}"
+    group: "{{ ansible_ssh_user }}"
+    mode: "744"
+    recurse: yes  
+  when: result is failed
+
+  loop:
+    - "{{ re_dir }}"
+    - "{{ c2_dir }}"
+    - "{{ pwn_win_dir }}"
+    - "{{ pwn_lin_dir }}"
+    - "{{ blue_dir }}"
   become: yes
