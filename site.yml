@@ -3,13 +3,13 @@
   become: yes
 
   roles:
-    - c2-frameworks
-    - re-frameworks
-    - pwn-windows
-    - pwn-linux
-    - install-ghidra
+    # - c2-frameworks
+    # - re-frameworks
+    # - pwn-windows
+    # - pwn-linux
+    # - install-ghidra
     - chown-dirs
-    - forensics-blue
+    # - forensics-blue
 
 
 
