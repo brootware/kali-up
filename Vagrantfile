@@ -1,4 +1,5 @@
 # kali-up
+# Credit - This vagrantfile is developed by referring to https://github.com/stevemcilwain/Disposable-Kali/blob/master/Vagrantfile
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
@@ -41,6 +42,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.hostname = VM_NAME
   config.ssh.insert_key = false
 
+  # VIRUTALBOX SETTINGS
   config.vm.provider VIRTUALBOX do |vb|
     vb.name = VM_NAME
     vb.cpus = VM_CPUS
