@@ -1,12 +1,15 @@
 ---
 # This playbook contains plays to grab RE frameworks/packages
+- name: Include vars of re_vars.yml file.
+  include_vars:
+    file: re_vars.yml
 
 - name: Creating RE directory in {{ re_dir }}
   file:
     path: "{{ re_dir }}"
     state: directory
     owner: "{{ user_dir }}"
-    mode: '0755'
+    mode: "0755"
   become: yes
 
 - name: Downloading RE Frameworks (IDA & Ghidra)
@@ -15,10 +18,8 @@
     dest: "{{ re_dir }}"
     mode: 755
     owner: "{{ user_dir }}"
-  loop:
-    - https://out7.hex-rays.com/files/idafree70_linux.run
-    - https://ghidra-sre.org/ghidra_9.2.3_PUBLIC_20210325.zip
-    - https://github.com/rizinorg/cutter/releases/download/v2.0.2/Cutter-v2.0.2-x64.Linux.AppImage
+  with_items: "{{ re_frameworks }}}"
+
   become: yes
 
 - name: Installing JDK 11+ for Ghidra
@@ -28,16 +29,16 @@
   become: yes
 
 - name: Running IDA Installer
-  command: "{{ re_dir }}idafree70_linux.run --mode unattended --prefix /opt/idafree --installpassword \"\" "
+  command: '{{ re_dir }}idafree70_linux.run --mode unattended --prefix /opt/idafree --installpassword "" '
   become: yes
 
 - name: Removing Running IDA Installer
-  file : 
+  file:
     path: "{{ re_dir }}idafree70_linux.run"
     state: absent
   become: yes
 
-- name: 
+- name:
   debug:
     msg: "By default, pip uses the pip version for the Ansible Python interpreter. For example, pip3 on python 3, and pip2 or pip on python 2."
 
@@ -45,34 +46,22 @@
   package:
     name: "{{ item }}"
     state: latest
-  loop:
-    - python3 
-    - python3-pip 
-    - python3-dev
-    - git 
-    - libssl-dev 
-    - libffi-dev
-    - build-essential
+  with_items: "{{ pwntool_dependencies }}"
   become: yes
 
 - name: Installing Python bindings for capstone/unicorn/keystone/ropper/pwntools
   pip:
     name: "{{ item }}"
-  loop:
-    - capstone 
-    - unicorn
-    - keystone-engine
-    - ropper
-    - pwntools
+  with_items: "{{ python_bindings }}"
   become: yes
 
 - name: Downloading GEF (GDB Enhanced Features) from GitHub
-  get_url: 
-    url: https://github.com/hugsy/gef/raw/master/scripts/gef.sh 
+  get_url:
+    url: https://github.com/hugsy/gef/raw/master/scripts/gef.sh
     dest: /tmp/gef.sh
   become: no
 
 - name: Installing GEF from /tmp/gef.sh.
-  script: 
+  script:
     cmd: /tmp/gef.sh
   become: no
