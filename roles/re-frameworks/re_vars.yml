@@ -1,0 +1,21 @@
+---
+re_frameworks:
+  - https://out7.hex-rays.com/files/idafree70_linux.run
+  - https://ghidra-sre.org/ghidra_9.2.3_PUBLIC_20210325.zip
+  - https://github.com/rizinorg/cutter/releases/download/v2.0.2/Cutter-v2.0.2-x64.Linux.AppImage
+
+pwntool_dependencies:
+  - python3
+  - python3-pip
+  - python3-dev
+  - git
+  - libssl-dev
+  - libffi-dev
+  - build-essential
+
+python_bindings:
+  - capstone
+  - unicorn
+  - keystone-engine
+  - ropper
+  - pwntools
