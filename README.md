@@ -18,7 +18,7 @@ Downloading and installing are separate roles and not all tool have "installing"
 
 ## How to Use?
 
-### Option 1: Installing ansible roles locally without provisioning any virtual machine.
+### Option 1: Installing ansible roles locally without provisioning any virtual machine
 
 1. Clone this repo.
 
