@@ -1,44 +1,30 @@
 ---
+- name: Include vars of pwnwin_vars.yml file.
+  include_vars:
+    file: pwnwin_vars.yml
+
 - name: Creating Windows Pwn directory in "{{ pwn_win_dir }}"
   file:
     path: "{{ pwn_win_dir }}"
     state: directory
     owner: "{{ user_dir }}"
-    mode: '0755'
+    mode: "0755"
   become: yes
 
-- name: Cloning Windows Focused tools 
+- name: Cloning Windows Focused tools
   git:
     repo: "{{ item }}"
     dest: "{{ pwn_win_dir }}{{ item.split('/')[-1].replace('.git','')}}"
     version: master
-  loop:
-    - https://github.com/BloodHoundAD/BloodHound
-    - https://github.com/byt3bl33d3r/CrackMapExec
-    - https://github.com/trustedsec/unicorn
-    - https://github.com/Hackplayers/evil-winrm
-    - https://github.com/PowerShellMafia/PowerSploit.git  
-    - https://github.com/GhostPack/KeeThief
-    - https://github.com/GhostPack/Seatbelt
-    - https://github.com/GhostPack/SharpUp
-    - https://github.com/GhostPack/SafetyKatz
-    - https://github.com/GhostPack/SharpDump
-    - https://github.com/GhostPack/SharpWMI  
-    - https://github.com/GhostPack/Rubeus
-    - https://github.com/GhostPack/SharpDPAPI
-    - https://github.com/GhostPack/Lockless
-    - https://github.com/GhostPack/SharpRoast
-    - https://github.com/cobbr/PSAmsi.git
-    - https://github.com/Tylous/Limelighter
+  with_items: "{{ pwnwin_tools }}"
   become: yes
 
-- name: Cloning Windows Refernce Material
+- name: Cloning Windows Reference Material
   git:
     repo: "{{ item }}"
     dest: "{{ pwn_win_dir }}/references/{{ item.split('/')[-1].replace('.git','')}}"
     version: master
-  loop:
-    - https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet
+  with_items: "{{ win_ref }} "
   become: yes
 
 - name: Downloading precompiled Packages
@@ -47,7 +33,5 @@
     dest: "{{ pwn_win_dir }}"
     mode: 644
     owner: "{{ user_dir }}"
-  loop:
-    - https://download.sysinternals.com/files/SysinternalsSuite.zip
-    - https://github.com/gentilkiwi/mimikatz/releases/download/2.2.0-20210810-2/mimikatz_trunk.zip
+  with_items: "{{ win_packages }}"
   become: yes

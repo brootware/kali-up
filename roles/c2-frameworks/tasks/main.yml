@@ -2,7 +2,7 @@
 # This playbook contains plays to clone all C2 frameworks included in the C2 Matrix
 # URL: https://howto.thec2matrix.com/
 
-- name: Include vars of re_vars.yml file.
+- name: Include vars of c2_vars.yml file.
   include_vars:
     file: c2_vars.yml
 
