@@ -18,11 +18,11 @@ Downloading and installing are separate roles and not all tool have "installing"
 
 ## How to Use?
 
-### Installing ansible roles locally without provisioning any virtual machine.
+### Option 1: Installing ansible roles locally without provisioning any virtual machine.
 
 1. Clone this repo.
 
-   ```
+   ```bash
    git clone https://github.com/brootware/kali-up.git && cd kali-up
    ```
 
@@ -45,7 +45,7 @@ Downloading and installing are separate roles and not all tool have "installing"
    ansible-playbook site.yml
    ```
 
-### Installing ansible roles with Oracle Virtual Box
+### Option 2: Installing ansible roles with Oracle Virtual Box
 
 1. Makse sure to set ```USE_VMWARE``` variable in [Vagrantfile](./Vagrantfile) to false.
 
@@ -63,7 +63,7 @@ Downloading and installing are separate roles and not all tool have "installing"
 
 4. Run the above command again if you ran into any issues.
 
-### Installing ansible roles with VMWare Fusion. (do note this is still in development)
+### Option 3: Installing ansible roles with VMWare Fusion. (do note this is still in development)
 
 1. You will first need to install the Vagrant VMware provider plugin. [source](https://www.vagrantup.com/docs/providers/vmware/installation)
 
