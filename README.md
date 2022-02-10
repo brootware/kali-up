@@ -100,7 +100,7 @@ roles for specific configuration. Frameworks within C2-matrix include the follow
 - [Caldera](https://www.github.com/mitre/caldera)
 - [Covenant](https://www.github.com/cobbr/Covenant)
 - [Empire](https://www.github.com/BC-SECURITY/Empire.git)
-- [FactionC2](https://www.github.com/FactionC2/Faction)
+- [FactionC2](https://www.github.com/FactionC2/Faction) (Currently unpublished)
 - [ibombshell](https://www.github.com/ElevenPaths/ibombshell.git)
 - [Koadic](https://www.github.com/zerosum0x0/koadic)
 - [Merlin](https://www.github.com/Ne0nd0g/merlin)
