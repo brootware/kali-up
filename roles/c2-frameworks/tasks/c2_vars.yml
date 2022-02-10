@@ -1,0 +1,15 @@
+---
+c2_frameworks:
+  - https://github.com/its-a-feature/apfell.git
+  - https://github.com/mitre/caldera.git
+  - https://github.com/cobbr/covenant.git
+  - https://github.com/bc-security/empire.git
+  - https://github.com/elevenpaths/ibombshell.git
+  - https://github.com/fymore/koadic.git
+  - https://github.com/ne0nd0g/merlin
+  - https://github.com/p3nt4/nuages.git
+  - https://github.com/adrianvollmer/powerhub.git
+  - https://github.com/byt3bl33d3r/silenttrinity
+  - https://github.com/bishopfox/sliver.git
+  - https://github.com/trustedsec/trevorc2.git
+  - https://github.com/nettitude/poshc2.git
