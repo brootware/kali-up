@@ -11,17 +11,19 @@ Downloading and installing are separate roles and not all tool have "installing"
 
 ## Requirements
 
-- [virtualbox](https://www.virtualbox.org/wiki/Downloads)
+- [virtualbox](https://www.virtualbox.org/wiki/Downloads) OR [vmwarefusion](https://customerconnect.vmware.com/web/vmware/evalcenter?p=fusion-player-personal)
 - [vagrant](https://www.vagrantup.com/docs/installation)
-- Ansible
-- Pip3
+- [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-and-upgrading-ansible-with-pip)
+- [Pip3](https://pip.pypa.io/en/stable/installation/)
 
 ## How to Use?
+
+### Installing ansible roles without any virtualization
 
 1. Clone this repo.
 
    ```
-   git clone https://github.com/archcloudlabs/kali-up.git && cd kali-up
+   git clone https://github.com/brootware/kali-up.git && cd kali-up
    ```
 
 2. Modify [site.yml](./site.yml) to have the Ansible roles you want to install on your machine by commenting. Else all the roles will be installed.
@@ -39,23 +41,45 @@ Downloading and installing are separate roles and not all tool have "installing"
 
 3. Execute the following if you are installing it without any virtualization.
 
-   ```
+   ```bash
    ansible-playbook site.yml
    ```
 
-4. For having a disposable kali machine up and running via Oracle Virtual box, execute the following:
+### Installing ansible roles with Oracle Virtual Box
 
-   ```
+1. Makse sure to set ```USE_VMWARE``` variable in [Vagrantfile](./Vagrantfile) to false.
+
+2. For having a disposable kali machine up and running via Oracle Virtual box, execute the following:
+
+   ```bash
    vagrant up
    ```
 
-   The above should automatcally download latest kali image and install all the roles you specified.
+3. The above should automatcally download latest kali image and install all the roles you specified.
 
-   ```
+   ```bash
    vagrant provision
    ```
 
-   Run this again if you ran into any issues.
+4. Run the above command again if you ran into any issues.
+
+### Installing ansible roles with VMWare Fusion. (do note this is still in development)
+
+1. You will first need to install the Vagrant VMware provider plugin. [source](https://www.vagrantup.com/docs/providers/vmware/installation)
+
+   ```bash
+   vagrant plugin install vagrant-vmware-desktop
+   ```
+
+2. Download VMWare Vagrant Utility and install from [here](https://www.vagrantup.com/vmware/downloads).
+
+3. Makse sure to set ```USE_VMWARE``` variable in [Vagrantfile](./Vagrantfile) to true.
+
+4. Execute the following:
+
+   ```bash
+   vagrant up
+   ```
 
 _If there's errors, please open an issue!_
 
