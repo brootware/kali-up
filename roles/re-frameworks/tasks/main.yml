@@ -18,7 +18,7 @@
     dest: "{{ re_dir }}"
     mode: 755
     owner: "{{ user_dir }}"
-  with_items: "{{ re_frameworks }}}"
+  with_items: "{{ re_frameworks }}"
 
   become: yes
 
