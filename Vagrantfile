@@ -99,7 +99,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       vw.vmx["serial0.fileType"] = "thinprint"
       vw.vmx["serial0.fileName"] = "thinprint"
       vw.vmx["ethernet0.present"] = "TRUE"
-      vw.vmx["extendedConfigFile"] = "Kali-Linux-2021.4a-vmware-amd64.vmxf"
       vw.vmx["scsi0:0.redo"] = ""
       vw.vmx["pciBridge0.pciSlotNumber"] = "17"
       vw.vmx["pciBridge4.pciSlotNumber"] = "21"
