@@ -21,7 +21,7 @@
     - https://github.com/cobbr/covenant
     - https://github.com/bc-security/empire.git
     - https://github.com/elevenpaths/ibombshell.git
-    - https://github.com/zerosum0x0/koadic
+    - https://github.com/fymore/koadic.git
     - https://github.com/ne0nd0g/merlin
     - https://github.com/p3nt4/nuages.git
     - https://github.com/adrianvollmer/powerhub.git
@@ -31,11 +31,11 @@
     - https://github.com/nettitude/poshc2
   become: yes
 
-- name: cloning c2 frameworks
-  git:
-    repo: "{{ item }}"
-    dest: "{{ c2_dir }}{{ item.split('/')[-1].replace('.git','')}}"
-    version: main
-  loop:
-    - https://github.com/factionc2/faction
-  become: yes
+# - name: cloning c2 frameworks
+#   git:
+#     repo: "{{ item }}"
+#     dest: "{{ c2_dir }}{{ item.split('/')[-1].replace('.git','')}}"
+#     version: main
+#   loop:
+#     - https://github.com/factionc2/faction
+#   become: yes
