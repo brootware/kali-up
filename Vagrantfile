@@ -55,6 +55,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       vw.vmx["ethernet0.connectionType"] = "nat"
       vw.vmx["ethernet0.addressType"] = "generated"
       vw.vmx["ethernet0.virtualDev"] = "e1000"
+      vw.vmx["svga.vramSize"] = "134217728"
+      vw.vmx["mks.enable3d"] = "TRUE"
+      vm.vmx["gui.fitGuestUsingNativeDisplayResolution"] = "TRUE"
     end
   else
     # VIRUTALBOX SETTINGS
