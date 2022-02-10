@@ -22,6 +22,12 @@
 
   become: yes
 
+- name: Update all packages to latest version
+  apt:
+    update_cache: yes
+    cache_valid_time: 86400
+  become: yes
+
 - name: Installing JDK 11+ for Ghidra
   package:
     name: openjdk-11-jdk-headless

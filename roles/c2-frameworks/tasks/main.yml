@@ -2,12 +2,16 @@
 # This playbook contains plays to clone all C2 frameworks included in the C2 Matrix
 # URL: https://howto.thec2matrix.com/
 
+- name: Include vars of re_vars.yml file.
+  include_vars:
+    file: c2_vars.yml
+
 - name: Creating C2 directory in "{{ c2_dir }}"
   file:
     path: "{{ c2_dir }}"
     state: directory
     owner: "{{ user_dir }}"
-    mode: '0755'
+    mode: "0755"
   become: yes
 
 - name: cloning c2 frameworks
@@ -15,22 +19,8 @@
     repo: "{{ item }}"
     dest: "{{ c2_dir }}{{ item.split('/')[-1].replace('.git','')}}"
     version: master
-  loop:
-    - https://github.com/its-a-feature/apfell
-    - https://github.com/mitre/caldera
-    - https://github.com/cobbr/covenant
-    - https://github.com/bc-security/empire.git
-    - https://github.com/elevenpaths/ibombshell.git
-    - https://github.com/fymore/koadic.git
-    - https://github.com/ne0nd0g/merlin
-    - https://github.com/p3nt4/nuages.git
-    - https://github.com/adrianvollmer/powerhub.git
-    - https://github.com/byt3bl33d3r/silenttrinity
-    - https://github.com/bishopfox/sliver
-    - https://github.com/trustedsec/trevorc2.git
-    - https://github.com/nettitude/poshc2
+  with_items: "{{ c2_frameworks }}"
   become: yes
-
 # - name: cloning c2 frameworks
 #   git:
 #     repo: "{{ item }}"
