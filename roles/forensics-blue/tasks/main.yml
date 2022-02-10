@@ -10,7 +10,9 @@
     cache_valid_time: 86400
 
 - name: Install foremost, exiftool, steghide
-  raw: "apt install {{ item }} -y"
+  package:
+    name: "{{ item }}"
+    state: latest
   become: yes
   with_items: "{{ packages }} "
 

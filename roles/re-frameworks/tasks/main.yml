@@ -67,7 +67,16 @@
     dest: /tmp/gef.sh
   become: no
 
-- name: Installing GEF from /tmp/gef.sh.
+- name: Installing GEF from /tmp/gef.sh. (Might fail if you're executing via Vagrant. You can ignore the errors here.)
   script:
     cmd: /tmp/gef.sh
   become: no
+  register: result
+  ignore_errors: true
+
+- name: Installing GEF from /tmp/gef.sh.
+  command:
+    cmd: sh /tmp/gef.sh
+  become: no
+  remote_user: vagrant
+  when: result is failed
