@@ -42,18 +42,17 @@ Steps to reproduce the behavior:
 ### Software
 
 <!-- Please complete the following information -->
-- Virtualbox version: <!-- by running: `vboxmanage --version` -->
-- VMWare version: <!-- by checking on VMWare guy: [e.g. VMWare Fusion Player Version 12.2.1 (18811640]-->
-- Vagrant version: <!-- by running: `vagrant version`-->
-- Ansible version: <!-- by running: `ansible --version` -->
-- Pip version: <!-- by running: `pip --version` -->
+- Virtualbox version: by running: `vboxmanage -v`
+- VMWare version: by checking on VMWare fusion GUI: [e.g. VMWare Fusion Player Version 12.2.1 (18811640]
+- Vagrant version: by running: `vagrant version` or `vagrant -v`
+- Ansible version: by running: `ansible --version`
+- Pip version: by running: `pip --version`
 
 ### Desktop
 
-<!-- If necessary, uncomment and fill in the following list:
+<!-- Please complete the following information -->
 - OS: [e.g. macOS 10.15.6]
-- Terminal or Power-shell: 
--->
+- Terminal or Power-shell:
 
 ### Additional context
 
