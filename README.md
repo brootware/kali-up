@@ -47,7 +47,7 @@ Downloading and installing are separate roles and not all tool have "installing"
 
 ### Option 2: Installing ansible roles with Oracle Virtual Box
 
-1. Makse sure to set ```USE_VMWARE``` variable in [Vagrantfile](./Vagrantfile) to false.
+1. Makse sure to set ```USE_VMWARE = false``` variable in [Vagrantfile](./Vagrantfile) to **false**.
 
 2. For having a disposable kali machine up and running via Oracle Virtual box, execute the following:
 
@@ -73,7 +73,7 @@ Downloading and installing are separate roles and not all tool have "installing"
 
 2. Download VMWare Vagrant Utility and install from [here](https://www.vagrantup.com/vmware/downloads).
 
-3. Makse sure to set ```USE_VMWARE``` variable in [Vagrantfile](./Vagrantfile) to true.
+3. Makse sure to set ```USE_VMWARE = true``` variable in [Vagrantfile](./Vagrantfile) to **true**.
 
 4. Execute the following:
 
