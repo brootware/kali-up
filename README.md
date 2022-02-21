@@ -12,7 +12,7 @@ Downloading and installing are separate roles and not all tool have "installing"
 ## Requirements
 
 - [virtualbox](https://www.virtualbox.org/wiki/Downloads) OR [vmwarefusion](https://customerconnect.vmware.com/web/vmware/evalcenter?p=fusion-player-personal)
-- [vagrant](https://www.vagrantup.com/docs/installation)
+- [vagrant](https://www.vagrantup.com/downloads)
 - [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-and-upgrading-ansible-with-pip)
 - [Pip3](https://pip.pypa.io/en/stable/installation/)
 
