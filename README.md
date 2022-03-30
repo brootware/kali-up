@@ -34,7 +34,6 @@ Downloading and installing are separate roles and not all tool have "installing"
      - re-frameworks
      - pwn-windows
      - pwn-linux
-     - install-ghidra
      - chown-dirs
      - forensics-blue
    ```
