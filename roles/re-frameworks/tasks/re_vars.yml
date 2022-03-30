@@ -1,8 +1,13 @@
 ---
-re_frameworks:
-  - https://out7.hex-rays.com/files/idafree70_linux.run
-  - https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_10.1.2_build/ghidra_10.1.2_PUBLIC_20220125.zip
-  - https://github.com/rizinorg/cutter/releases/download/v2.0.2/Cutter-v2.0.2-x64.Linux.AppImage
+ida_version: "77"
+ida_installer: "idafree{{ ida_version }}_linux.run"
+
+cutter_version: "v2.0.5"
+cutter_binary: "Cutter-{{ cutter_version }}-x64.Linux.AppImage"
+
+re_tool_sources:
+  - "https://out7.hex-rays.com/files/{{ ida_installer }}"
+  - "https://github.com/rizinorg/cutter/releases/download/{{ cutter_version }}/{{ cutter_binary }}"
 
 pwntool_dependencies:
   - python3
@@ -19,3 +24,6 @@ python_bindings:
   - keystone-engine
   - ropper
   - pwntools
+
+re_tools:
+  - ghidra

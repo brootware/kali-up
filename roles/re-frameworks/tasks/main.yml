@@ -12,13 +12,13 @@
     mode: "0755"
   become: yes
 
-- name: Downloading RE Frameworks (IDA & Ghidra)
+- name: Downloading RE Frameworks (IDA & Cutter)
   get_url:
     url: "{{ item }}"
     dest: "{{ re_dir }}"
     mode: 755
     owner: "{{ user_dir }}"
-  with_items: "{{ re_frameworks }}"
+  with_items: "{{ re_tool_sources }}"
 
   become: yes
 
@@ -28,23 +28,25 @@
     cache_valid_time: 86400
   become: yes
 
-- name: Installing JDK 11+ for Ghidra
-  package:
-    name: openjdk-11-jdk-headless
-    state: latest
-  become: yes
-
 - name: Running IDA Installer
-  command: '{{ re_dir }}idafree70_linux.run --mode unattended --prefix /opt/idafree --installpassword "" '
+  command: '{{ re_dir }}{{ ida_installer }} --mode unattended --prefix /opt/idafree --installpassword "" '
   become: yes
 
-- name: Removing Running IDA Installer
+- name: Removing IDA Installer
   file:
-    path: "{{ re_dir }}idafree70_linux.run"
+    path: "{{ re_dir }}{{ ida_installer }}"
     state: absent
   become: yes
 
-- name:
+- name: Add cutter alias to .zshrc
+  lineinfile:
+    path: ~/.zshrc
+    line: "{{ item }}"
+  with_items:
+    - "# Additional alias from kali-up RE-frameworks role"
+    - "alias cutter={{ re_dir }}{{ cutter_binary }}"
+
+- name: Python pip debug message
   debug:
     msg: "By default, pip uses the pip version for the Ansible Python interpreter. For example, pip3 on python 3, and pip2 or pip on python 2."
 
@@ -80,3 +82,16 @@
   become: no
   remote_user: vagrant
   when: result is failed
+
+- name: Installing JDK 11+ for Ghidra
+  package:
+    name: openjdk-11-jdk-headless
+    state: latest
+  become: yes
+
+- name: Install ghidra
+  package:
+    name: "{{ item }}"
+    state: latest
+  with_items: "{{ re_tools }}"
+  become: yes
