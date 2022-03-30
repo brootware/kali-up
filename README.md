@@ -170,4 +170,4 @@ The `lin-pwn` role automates the downloading of the following:
 - [steghide](https://salsa.debian.org/pkg-security-team/steghide)
 - [oletools](http://decalage.info/python/oletools)
 - [volatility3](https://github.com/volatilityfoundation/volatility3.git)
-- [oledump] (<https://blog.didierstevens.com/my-software/>)
+- [oledump](<https://blog.didierstevens.com/my-software/>)
