@@ -14,7 +14,20 @@
     name: "{{ item }}"
     state: latest
   become: yes
-  with_items: "{{ packages }} "
+  with_items: "{{ packages }}"
+
+- name: Clone forensic tools.
+  git:
+    repo: "{{ item }}"
+    dest: "{{ blue_dir }}{{ item.split('/')[-1].replace('.git','') }}"
+    version: stable
+    force: yes
+  with_items: "{{ forensic_tools }}"
+  become: yes
+
+- name: Install volatility 3 requirements
+  pip:
+    requirements: "{{ blue_dir }}{{ vol3_dir }}/requirements.txt"
 
 - name: Install olevba via pip for analyzing macros
   pip:
@@ -22,7 +35,7 @@
   with_items: "{{ pip_modules }}"
   become: yes
 
-- name: Download oledump.
+- name: Download oledump
   get_url:
     url: "http://didierstevens.com/files/software/oledump_V{{ oledump_version }}.zip"
     dest: "{{ blue_dir }}"
@@ -30,6 +43,18 @@
 
 - name: Expand oledump
   unarchive:
-    src: "{{ blue_dir }}/oledump_V{{ oledump_version }}.zip"
-    dest: "{{ blue_dir }}"
+    src: "{{ blue_dir }}oledump_V{{ oledump_version }}.zip"
+    dest: "{{ oledump_dir }}"
     remote_src: yes
+
+- name: Removing oledump zip
+  file:
+    path: "{{ blue_dir }}oledump_V{{ oledump_version }}.zip"
+    state: absent
+  become: yes
+
+- name: Add forensic tools alias to .zshrc
+  lineinfile:
+    path: ~/.zshrc
+    line: "{{ item }}"
+  with_items: "{{ alias_items }}"

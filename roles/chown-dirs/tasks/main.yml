@@ -15,6 +15,7 @@
     - "{{ pwn_win_dir }}"
     - "{{ pwn_lin_dir }}"
     - "{{ blue_dir }}"
+    - "{{ oledump_dir }}"
   become: yes
 
 - name: Chown RE Dir as remote vagrant user
@@ -23,7 +24,7 @@
     owner: "{{ ansible_ssh_user }}"
     group: "{{ ansible_ssh_user }}"
     mode: "744"
-    recurse: yes  
+    recurse: yes
   when: result is failed
 
   loop:
@@ -32,4 +33,5 @@
     - "{{ pwn_win_dir }}"
     - "{{ pwn_lin_dir }}"
     - "{{ blue_dir }}"
+    - "{{ oledump_dir }}"
   become: yes
